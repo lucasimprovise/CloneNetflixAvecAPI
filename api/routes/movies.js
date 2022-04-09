@@ -3,7 +3,7 @@ const router = require("express").Router();
 const Movie = require("../models/Movie");
 const verify = require("../verifyToken");
 
-//CREATE
+//AJOUTER UN NOUVEAU FILM
 
 router.post("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
@@ -40,7 +40,7 @@ router.put("/:id", verify, async (req, res) => {
   }
 });
 
-//DELETE
+//SUPPRIMER UN FILM
 
 router.delete("/:id", verify, async (req, res) => {
   if (req.user.isAdmin) {
@@ -55,7 +55,7 @@ router.delete("/:id", verify, async (req, res) => {
   }
 });
 
-//GET
+//RECUPERER UN FILM / SERIES
 
 router.get("/find/:id", verify, async (req, res) => {
   try {
@@ -66,7 +66,7 @@ router.get("/find/:id", verify, async (req, res) => {
   }
 });
 
-//GET RANDOM
+//RECUPERER LES FILMS / SERIES DE MANIERE RANDOM
 
 router.get("/random", verify, async (req, res) => {
   const type = req.query.type;
@@ -89,7 +89,7 @@ router.get("/random", verify, async (req, res) => {
   }
 });
 
-//GET ALL
+//RECUPERER TOUT LES FILMS / SERIES
 
 router.get("/", verify, async (req, res) => {
   if (req.user.isAdmin) {
