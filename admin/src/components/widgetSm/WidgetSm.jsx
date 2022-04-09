@@ -18,7 +18,7 @@ export default function WidgetSm() {
           },
         });
         setNewUsers(res.data);
-      } catch (err) {
+      } catch (err) { 
         console.log(err);
       }
     };
