@@ -3,8 +3,6 @@ import "./home.css";
 import { useEffect, useMemo, useState } from "react";
 
 import Chart from "../../components/chart/Chart";
-import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
-import WidgetLg from "../../components/widgetLg/WidgetLg";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import axios from "axios";
 
