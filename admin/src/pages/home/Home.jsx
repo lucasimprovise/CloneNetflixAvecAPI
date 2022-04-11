@@ -7,7 +7,6 @@ import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import WidgetSm from "../../components/widgetSm/WidgetSm";
 import axios from "axios";
-import { userData } from "../../dummyData";
 
 export default function Home() {
   const MONTHS = useMemo(
@@ -36,7 +35,7 @@ export default function Home() {
         const res = await axios.get("/users/stats", {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTZmYzQ2NDk0Mjc3MTYwNDg4MmMxNiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYyNTgzMjMxMSwiZXhwIjoxNjI2MjY0MzExfQ.ATXV-1TTWIGyVBttTQSf0erRWjsgZ8jHQv1ZsUixbng",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNTAzZWNiNmQ2YzZiNDFmMjNmZDk0NiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0OTU5NjgxMSwiZXhwIjoxNjUwMDI4ODExfQ.tKwxTvxVBgCPY5zG7j_pEC0F0HUloxO1V5zt1YfnG_E",
           },
         });
         const statsList = res.data.sort(function (a, b) {
@@ -54,13 +53,12 @@ export default function Home() {
     };
     getStats();
   }, [MONTHS]);
+
   return (
     <div className="home">
-      <FeaturedInfo />
-      <Chart data={userStats} title="User Analytics" grid dataKey="New User"/>
+      <Chart data={userStats} title="User Analytics" grid dataKey="New User" />
       <div className="homeWidgets">
-        <WidgetSm/>
-        <WidgetLg/>
+        <WidgetSm />
       </div>
     </div>
   );

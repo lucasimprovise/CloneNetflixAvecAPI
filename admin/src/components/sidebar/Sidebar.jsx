@@ -1,19 +1,21 @@
 import "./sidebar.css";
+
 import {
+  AddToQueue,
+  ChatBubbleOutline,
+  DynamicFeed,
   LineStyle,
-  Timeline,
-  TrendingUp,
-  PermIdentity,
-  PlayCircleOutline,
   List,
   MailOutline,
-  DynamicFeed,
-  ChatBubbleOutline,
-  WorkOutline,
-  Report,
-  AddToQueue,
+  PermIdentity,
+  PlayCircleOutline,
   QueuePlayNext,
+  Report,
+  Timeline,
+  TrendingUp,
+  WorkOutline,
 } from "@material-ui/icons";
+
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
@@ -29,25 +31,11 @@ export default function Sidebar() {
                 Home
               </li>
             </Link>
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              <TrendingUp className="sidebarIcon" />
-              Sales
-            </li>
           </ul>
         </div>
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-            <Link to="/users" className="link">
-              <li className="sidebarListItem">
-                <PermIdentity className="sidebarIcon" />
-                Users
-              </li>
-            </Link>
             <Link to="/movies" className="link">
               <li className="sidebarListItem">
                 <PlayCircleOutline className="sidebarIcon" />

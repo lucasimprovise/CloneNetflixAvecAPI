@@ -2,9 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js");
 const verify = require("../verifyToken");
-
-
-//METTRE A JOUR UN UTILISATEUR
+//UPDATE
 
 router.put("/:id", verify, async (req, res) => {
   if (req.user.id === req.params.id || req.user.isAdmin) {
@@ -32,7 +30,7 @@ router.put("/:id", verify, async (req, res) => {
   }
 });
 
-//SUPPRIMER UN UTILISATEUR
+//DELETE
 router.delete("/:id", verify, async (req, res) => {
   if (req.user.id === req.params.id || req.user.isAdmin) {
     try {
@@ -46,7 +44,7 @@ router.delete("/:id", verify, async (req, res) => {
   }
 });
 
-//RECUPERER LES INFOS D'UN UTILISATEUR
+//GET
 
 router.get("/find/:id", async (req, res) => {
   try {
@@ -58,7 +56,7 @@ router.get("/find/:id", async (req, res) => {
   }
 });
 
-//RECUPERER TOUT LES UTILSATEURS
+//GET ALL
 router.get("/", verify, async (req, res) => {
   const query = req.query.new;
   if (req.user.isAdmin) {
@@ -75,7 +73,7 @@ router.get("/", verify, async (req, res) => {
   }
 });
 
-//RECUPERER LES STATS D'UN UTILISATEUR
+//GET USER STATS
 router.get("/stats", async (req, res) => {
   const today = new Date();
   const latYear = today.setFullYear(today.setFullYear() - 1);

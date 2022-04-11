@@ -1,11 +1,12 @@
 import "./chart.css";
+
 import {
-  LineChart,
-  Line,
-  XAxis,
   CartesianGrid,
-  Tooltip,
+  Line,
+  LineChart,
   ResponsiveContainer,
+  Tooltip,
+  XAxis,
 } from "recharts";
 
 export default function Chart({ title, data, dataKey, grid }) {
